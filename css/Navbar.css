@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root{
+    --fondo:linear-gradient(rgba(255, 145, 0, 0.5),rgba(255, 255, 255, 0));
+}
+
+
+footer{
+    background:var(--fondo);
+    color: white;
+}
+
+
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    display: inline-block;
+    line-height: 50px;
+    background:linear-gradient(rgba(255, 173, 21, 0.99),rgba(255, 173, 21, 0.99));
+    z-index: 90;
+}
+
+
+
+#check{
+    display: none;
+}
+
+.checkbtn{
+    color: white;
+    float: right;
+    cursor: pointer;
+}
+
+.checkbtn p{
+    font-size: 22px;
+    padding: 6px 34px;
+}
+
+
+.usuario{
+    display: none;
+}
+
+.logo{
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 100;
+}
+
+.Logonav{
+    height: 60px;
+}
+
+nav ul{
+    width: 100%;
+    display: grid;
+    left: 100%;
+    grid-template-columns: 10%;
+    justify-content: flex-end;
+    margin-top: 70px;
+    z-index: 10;
+    text-align: center;
+    position: fixed;
+    transition: all .9s;
+}
+
+nav ul li{
+    text-decoration: none;
+    transition: all .5s;
+    width: 100%;
+    background:linear-gradient(rgba(255, 173, 21, 0.99),rgba(255, 173, 21, 0.99));
+}
+
+
+.config{
+    display: none;
+}
+
+nav ul li a{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ffff;
+    font-size: 15px;
+    transition: all .5s;
+    text-decoration: none;
+}
+
+
+#check:checked ~ ul{
+    left: 0;
+}
+
+nav ul li a:hover{
+    background-color: transparent;
+    color: black;
+}
+
+
+.cerrar:hover{
+    color: red;
+}
+
+
+nav ul li:hover{
+    transform: translateX(-20%);
+}
+
+@media screen and (max-width:1300px) {
+
+    nav ul{
+        grid-template-columns: 20%;
+    }
+}
+
+
+@media screen and (max-width:920px) {
+
+    nav ul{
+        grid-template-columns: 30%;
+    }
+
+    nav ul li a{
+        font-size:25px;
+    }
+
+    .checkbtn p{
+        font-size: 30px;
+    }
+
+
+}
+
+@media screen and (max-width:850px) {
+
+    nav ul{
+        grid-template-columns: 35%;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+
+    nav ul{
+        grid-template-columns: 60%;
+    }
+
+}
+
+@media screen and (max-width:420px) {
+
+    nav ul{
+        grid-template-columns: 75%;
+    }
+
+    .usuario{
+        display: block;
+        font-size: 30px;
+        color: white;
+    }
+
+
+
+    .checkbtn li p{
+        display: none;
+    }
+
+    .config{
+        display: block;
+        height: 50px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+}
+
+@media screen and (max-width:300px) {
+
+    nav ul{
+        grid-template-columns: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

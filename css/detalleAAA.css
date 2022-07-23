@@ -1,0 +1,289 @@
+
+
+.detalle{
+    display: grid;
+    width: 100%;
+    height: 525px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+    grid-template-columns: 30% 22%;
+   justify-content: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 1.2rem;
+   
+}
+
+h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+.precio{
+    color: rgb(0, 253, 51);
+}
+
+.productoaaa{
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/Home\ Decorators\ Collection\ -\ The\ Home\ Depot.jpg);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    opacity: 80%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding:25px;
+}
+
+
+.productoaaa img{
+    width: 450px;
+    border-radius: 20px;
+    border: 3px solid #ffffff;
+}
+.descripciontexto {
+    color: #ff9e4a;
+    border-radius: 12px;
+    opacity: 95%;
+    
+}
+
+body{
+    background-image: url(../img/8\ aliments\ qui\ donnent\ de\ beaux\ cheveux.jpg);
+    background-size: cover;
+}
+
+.productodetalle{
+    display: flex;
+    margin: auto;
+    height: 430px;
+    margin-top: 35px;
+    border-radius: 15px;
+}
+
+.descripcion{
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/Home\ Decorators\ Collection\ -\ The\ Home\ Depot.jpg);
+    padding: 30px;
+    opacity: 80%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    
+}
+
+.cantidad{
+    display: flex;
+    gap: 20px;
+}
+
+input[type="number"]{
+    width: 12%;
+    height: max-content;
+    outline: none;
+}
+
+.comprar{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color:white;
+    background-color: #ff9e4a;
+    width: 50%;
+    text-decoration: none;
+    padding: 1px 0;
+    text-align: center;
+    font-size: 22px;
+    height: 35px;
+    border: solid 2px white;
+    border-radius: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+
+.comprar:hover{
+    transform: scale(0.9);
+
+}
+
+
+
+@media screen and (max-width:1550px){
+
+    .detalle{
+        grid-template-columns: 70%;
+        margin-bottom: 580px;
+        margin-top: 95px;
+    }
+
+    .productoaaa{
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .productodetalle{
+        display: flex;
+        margin: auto;
+        height: 500px;
+        margin-top: 35px;
+        border-radius: 15px;
+    }
+
+
+    
+    .descripcion{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+
+    p{
+        padding: px;
+    }
+
+    .precio{
+        padding: 20px;
+    }
+
+    .descripciontexto{
+        padding: 15px;
+    }
+
+    input[type="number"]{
+        outline: none;
+        width: max-content;
+        padding: 1px 10px;
+    }
+
+    
+    
+}
+
+@media screen and (max-width:1300px) {
+    
+    .cantidad{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:700px){
+
+    .detalle{
+        grid-template-columns: 80%;
+        margin-top: 100px;
+        margin-bottom: 300px;
+    }
+
+    .productoaaa{
+
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .productoaaa img{
+        width: 350px;
+    }
+
+    .cantidad{
+        justify-content: center;
+    }
+
+    .comprar{
+        width: 42%;
+    }
+    
+    .productodetalle{
+        display: flex;
+        margin: auto;
+        height: 150px;
+        margin-top: 35px;
+        border-radius: 15px;
+    }
+    
+    .descripcion{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+
+    p{
+        padding: px;
+    }
+
+    .precio{
+        padding: 20px;
+    }
+
+    .descripciontexto{
+        padding: 15px;
+    }
+
+    .cantidad{
+        width: 30px;
+        margin: auto;
+        padding: 17px;
+    }
+
+
+
+@media screen and (max-width:600px) {
+
+    .detalle{
+       
+        margin-top: 100px;
+        margin-bottom: 400px;
+    }
+
+   
+}
+
+@media screen and (max-width:500px) {
+
+
+    .productoaaa img{
+        width: 200px;
+    }
+
+    .comprar{
+        width: 70% ;
+    }
+    
+}
+
+@media screen and (max-width:420px) {
+
+
+    .descripciontexto{
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width:280px) {
+    
+    .detalle{
+        margin-top: 60px;
+        margin-bottom: 420px;
+    }
+
+    .productoaaa img{
+        width: 160px;
+    }
+}
+}

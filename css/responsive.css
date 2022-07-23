@@ -1,0 +1,98 @@
+/*--------------------------------------------------<|"SIDEBAR"|>--------------------------------------------------*/
+@media (max-width:768px) {
+    .content{
+        width: 100%;
+        left: 0;
+    }
+    .sidebar{
+        width: 60px;
+        left: -60px;
+    }
+    .content.active{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .sidebar.active{
+        left: 0;
+    }
+}
+
+/*--------------------------------------------------<|"CLIENT"|>--------------------------------------------------*/
+@media (max-width:680px) {
+    .table{
+        font-size: small;
+    }
+    .table tbody .ab .edit, .delete{
+        display: none;
+    }
+    .table tbody td #edit, #delete{
+        display: block;
+    }
+    .table tbody .ab{
+        display: flex;
+        height: 100%;
+    }
+    .table tbody td #edit{
+        background-color:cornflowerblue;
+        color: white;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        margin-right: 5px;
+    }
+    .table tbody .ab #edit:active{
+        transform: scale(.9);
+        transition: .1s ease;
+    }
+    .table tbody .ab #delete{
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .table tbody .ab #delete:active{
+        transform: scale(.9);
+        transition: .1s ease;
+    }
+}
+
+/*--------------------------------------------------<|"RESERV"|>--------------------------------------------------*/
+@media (max-width:768px) {
+    .reserv table{
+        font-size: small;
+        width: 100%;
+    }
+    .reserv tbody td #edt, #del{
+        display: block;
+    }
+    .reserv tbody td .edt, .del{
+        display: none;
+    }
+    .reserv tbody .rb{
+        display: flex;
+    }
+    .reserv table tbody td #edt{
+        background-color:green;
+        color: white;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        margin-right: 4px;
+    }
+    .reserv table tbody td #edt:active{
+        transform: scale(.9);
+        transition: .1s ease;
+    }
+    .reserv table tbody td #del{
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .reserv table tbody td #del:active{
+        transform: scale(.9);
+        transition: .1s ease;
+    }
+}

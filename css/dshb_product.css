@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.main{
+    width: 100%;
+}
+
+/*--------------------------------------------------SIDEBAR--------------------------------------------------*/
+.sidebar{
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    background-color: #ff9710;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+.sidebar img{
+    width: 180px;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar ul li{
+    width: 100%;
+}
+
+.sidebar ul li:hover{
+    background-color: rgb(255, 190, 68);
+    transform: scale(1.08);
+    transition: all .2s ease;
+}
+
+.sidebar ul li a{
+    display: block;
+    width: 100%;
+    display: flex;
+    color: black;
+}
+
+.sidebar ul li a:hover{
+    color: white;
+}
+
+.sidebar ul li a i{
+    color: black;
+    min-width: 60px;
+    display: block;
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.sidebar ul li a .item{
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover i {
+    color: white;
+}
+
+.content.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.sidebar.active{
+    width: 60px;
+}
+
+#logo.active{
+    width: 55px;
+    transition: all 0.3s ease;
+}
+
+/*--------------------------------------------------NAVBAR--------------------------------------------------*/
+.content{
+    position: absolute;
+    width: calc(100% - 200px);
+    left: 200px;
+    min-height: 100vh;
+    transition: 0.5s ease;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 20px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+
+.navbar .n1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile img{
+    width: 50px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#btn-menu{
+    justify-content: flex-start;
+    margin-right: 15px;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+/*--------------------------------------------TABLA----------------------------------------------*/
+.table{
+    margin: 30px;
+    padding: 10px;
+}
+
+.table table{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 2px 2px rgb(0 0 0 / 20%);
+}
+
+.table td{
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.table thead td{
+    background-color: wheat;
+    border-bottom: 1px solid black;
+}
+
+.table tbody td{
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.table tbody .edit{
+    background-color:cornflowerblue;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 7px;
+}
+.table tbody .edit i{
+    margin-right: 3px;
+}
+.table tbody .edit:hover{
+    cursor: pointer;
+    background-color:rgb(140, 180, 255);
+    color: black;
+    transform: scale(1.1);
+    transition: .1s ease;
+}
+.table tbody .edit:active{
+    transform: scale(.95);
+}
+
+.table tbody .delete{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+.table tbody .delete i{
+    margin-right: 3px;
+}
+.table tbody .delete:hover{
+    cursor: pointer;
+    background-color: rgb(255, 102, 102);
+    color: black;
+    transform: scale(1.1);
+    transition: .1s ease;
+}
+.table tbody .delete:active{
+    transform: scale(.95);
+}
+
+.table tbody td #edit, #delete{
+    display: none;
+}

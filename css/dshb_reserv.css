@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+.main{
+    width: 100%;
+}
+
+/*--------------------------------------------------SIDEBAR--------------------------------------------------*/
+.sidebar{
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    background-color: #ff9710;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+
+.sidebar img{
+    width: 180px;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.sidebar ul li{
+    width: 100%;
+}
+
+.sidebar ul li:hover{
+    background-color: rgb(255, 190, 68);
+    transform: scale(1.08);
+    transition: all .2s ease;
+}
+
+.sidebar ul li a{
+    display: block;
+    width: 100%;
+    display: flex;
+    color: black;
+}
+
+.sidebar ul li a:hover{
+    color: white;
+}
+
+.sidebar ul li a i{
+    color: black;
+    min-width: 60px;
+    display: block;
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.sidebar ul li a .item{
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    white-space: nowrap;
+}
+
+.sidebar ul li a:hover i {
+    color: white;
+}
+
+.content.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.sidebar.active{
+    width: 60px;
+}
+
+#logo.active{
+    width: 55px;
+    transition: all 0.3s ease;
+}
+
+/*--------------------------------------------------NAVBAR--------------------------------------------------*/
+.content{
+    position: absolute;
+    width: calc(100% - 200px);
+    left: 200px;
+    min-height: 100vh;
+    transition: 0.5s ease;
+}
+
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 20px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+
+.navbar .n1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile img{
+    width: 50px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#btn-menu{
+    justify-content: flex-start;
+    margin-right: 15px;
+    font-size: 34px;
+    cursor: pointer;
+}
+
+/*--------------------------------------------------RESERVS--------------------------------------------------*/
+.reserv{
+    margin: 30px;
+    padding: 10px;
+}
+
+.reserv table{
+    width: 60%;
+    border-radius: 6px;
+    border-collapse: collapse;
+    box-shadow: 0px 2px 2px 2px rgb(0 0 0 / 20%);
+}
+
+.reserv table thead{
+    background: wheat;
+    border-bottom: 1px solid black;
+}
+
+.reserv table td{
+    padding: 7px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.reserv table tbody td .edt{
+    background-color:green;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+.reserv table tbody td .edt:hover{
+    cursor: pointer;
+    background-color:rgb(49, 216, 49);
+    color: black;
+    transform: scale(1.1);
+    transition: .1s ease;
+}
+.reserv table tbody td .edt:active{
+    transform: scale(.95);
+}
+
+.reserv table tbody td .del{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+.reserv table tbody td .del:hover{
+    cursor: pointer;
+    background-color: rgb(255, 102, 102);
+    color: black;
+    transform: scale(1.1);
+    transition: .1s ease;
+}
+.reserv table tbody td .del:active{
+    transform: scale(.95);
+}
+
+.reserv tbody td #edt, #del{
+    display: none;
+}

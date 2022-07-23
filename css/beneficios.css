@@ -1,0 +1,87 @@
+:root{
+    --fondo:linear-gradient(#ff9710, #ffa528);
+}
+
+
+.titulo{
+    margin-top: 40px;
+    width:100%;
+    background:var(--fondo);
+    text-align: center;
+    color: white;
+    border-top: 1px solid #ffffff;
+}
+
+.ben{
+    width: 100%;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% ;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.tben{
+    
+    width: 100%;
+    display: grid;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: justify;
+}
+
+
+.tben img{
+    width: 500px;
+}
+
+
+.container-beneficios{
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/mvc-hj/img/hola.jpg);
+    padding: 20px;
+    text-align: justify;
+    border-radius: 40px;
+    color: white;
+    text-shadow: 1px 1px rgb(147, 147, 147);
+    font-size: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+footer{
+    margin-top: 100px;
+}
+
+@media screen and (max-width:920px){
+
+    .tben{
+        grid-template-columns: 70%;
+        font-size: 1rem;
+    }
+
+    .tben img{
+        width: 400px;
+       
+    }
+
+    .ben{
+        grid-template-columns: 35% 35%;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+
+    .tben img{
+        display: none;
+    }
+
+    .ben{
+        grid-template-columns:80% ;
+    }
+    
+}

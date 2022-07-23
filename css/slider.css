@@ -1,0 +1,162 @@
+
+
+section ul{
+    float: right;
+    margin-right: 20px;
+    margin-top: 0;
+}
+
+section ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    margin-top: 0;
+}
+
+
+
+section ul li a{
+    color: #fff;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    margin-top: 0;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+li a.active, li a:hover{
+    background: rgb(0, 0, 0, .3);
+    transition: .5s;
+}
+
+.container1{
+    width: 90%;
+    min-height: 70vh;
+    max-height: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.slider{
+    background-color: #f0f0f0;
+    padding: 30px 0;
+}
+
+.slider_container{
+    display: grid;
+    grid-template-columns: 75px 1fr 75px;
+    align-items: center;
+    gap: 1em;
+}
+
+.slider_body{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    background-color: #f2f2f205;
+    border-radius: 10px;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition: opacity 1.5s;
+}
+
+.slider_body--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+
+
+
+.slider_img{
+    width: 1300px;
+    height: 710px;
+    border-radius: 12PX;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider_arrow{
+    cursor: pointer;
+    width: 90%;
+}
+
+.slider_arrow:nth-of-type(2){
+    justify-self: end;
+}
+
+@media (max-width:1300px){
+
+    .slider_img{
+        width: 840px;
+    }
+}
+
+@media (max-width:1050px) {
+
+    .slider_img{
+        width: 660px;
+        height: 500px;
+    }
+    
+}
+@media (max-width:850px){
+    .slider_body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 1em;
+    }
+
+    .slider_picture{
+        grid-row: 1/2;
+    }
+
+    .slider_img{
+        width: 510px;
+        height: 410px;
+    }
+}
+
+@media (max-width: 600px){
+    .slider_container{
+        grid-template-columns: 25px 1fr 25px;
+    }
+    
+    .slider_arrow{
+        width: 100%;
+    }
+
+    .slider_img{
+        width: 400px;
+        height: 400px;
+    }
+}
+
+
+@media (max-width:450px){
+
+    .slider_img{
+        width: 280px;
+        height: 300px;
+    }
+}
+
+@media (max-width:400px) {
+
+    .slider_img{
+        width: 200px;
+    }
+    
+}
+
+@media (max-width:300px) {
+    
+    .slider_img{
+        width: 150px;
+        height: 200px;
+    }
+}

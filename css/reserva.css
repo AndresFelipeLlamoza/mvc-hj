@@ -1,0 +1,76 @@
+
+.contenedor{
+    width:25%;
+    height:550px;
+    background-color: rgba(104, 95, 95, 0.966);
+    display:grid;
+    margin-left:37%;
+    border-style:none;
+    margin-top:3%;
+    margin-bottom: 6%;
+    border-radius: 50px;
+    
+}
+
+.pollito-reserva{
+    margin-left:117px;
+}
+.nombre{
+    padding:28px;
+    display:grid;
+}
+
+input[type=text][name="nombre"]{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    outline:none
+}
+
+input[type=number][name="numero"]{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+}
+
+input[type=number][name="costo"]{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+}
+
+input[type=number][name="total"]{
+    border-top:none;
+    border-left:none;
+    border-right:none;
+}
+.boton{
+    background-color: transparent;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom:15px;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px #ff9e4a solid;
+    border-radius: 10px;
+    transition: all .5s;
+}
+
+.boton:hover{
+    background-color: #ff9e4a;
+    transform: .5 all
+}
+
+@media screen and (max-width:400px) {
+    .contenedor{
+        width: 300px;
+        margin-left:43px;
+    }
+    .pollito-reserva{
+        margin-left: 78px;
+    }
+}
