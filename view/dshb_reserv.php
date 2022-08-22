@@ -6,11 +6,8 @@ if(!isset($_SESSION['usuario'])){
     session_destroy();
     die();
 }
-
 include ("../model/conexion.php");
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -20,14 +17,14 @@ include ("../model/conexion.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="/mvc-hj/css/dshb_reserv.css">
-    <link rel="stylesheet" href="/mvc-hj/css/styles/responsive.css">
-    <title>Administración - Reservas</title>
+    <link rel="stylesheet" href="/mvc-hj/css/responsive.css">
+    <title>Panel de Control (Reservas) - Huevos Jireth</title>
 </head>
 <body>
     <!--SIDEBAR-->
     <div class="main">
         <div class="sidebar">
-            <center><img src="/mvc-hj/img/logopollitofutbol.png" id="logo"></center>
+            <center><img src="/mvc-hj/img/Logo.png" id="logo"></center>
             <ul>
                 <li><a href="/mvc-hj/view/dshb_home.php">
                     <i class='bx bxs-home' title="Principal"></i>
@@ -46,7 +43,7 @@ include ("../model/conexion.php");
                     <span class="item">Productos</span>
                 </a></li>
                 <li><a href="/mvc-hj/view/dshb_mesages.php">
-                    <i class='bx bxs-card' title="Principal"></i>
+                    <i class='bx bxs-envelope' title="Mensajes"></i>
                     <span class="item">Mensajes</span>
                 </a></li>
             </ul>
@@ -59,44 +56,19 @@ include ("../model/conexion.php");
                     <i class='bx bx-menu' id="btn-menu"></i>
                     <h2>RESERVAS</h2>
                 </div>
-                    <label for="perfil"><a href="/mvc-hj/model/close.php">Cerrar sesion</a></label>
-                    <p><?php echo $_SESSION['usuario']?></p>
-                    <img src="/mvc-hj/img/profile.png" name="perfil">
-                </div>
+                <img id="photo" src="/mvc-hj/img/profile.png">
             </div>
-
-            <!--RESERVS-->
-            <div class="reserv">
-                <table>
-                    <thead>
-                        <tr>
-                            <td><h4>Nombre</h4></td>
-                            <td><h4>Producto</h4></td>
-                            <td><h4>Cantidad</h4></td>
-                            <td><h4>Valor</h4></td>
-                            <td><h4>Acciones</h4></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Jesus Manuel Velasquez</td>
-                            <td>Huevos AAA</td>
-                            <td>3</td>
-                            <td>$48.000</td>
-                            <td class="rb">
-                                <a href="#"><button class="edt">Detalle</button></a>
-                                <a href="#"><button class="del">Eliminar</button></a>
-
-                                <a href="#"><button id="edt"><i class='bx bx-show-alt'></i></button></a>
-                                <a href="#"><button id="del"><i class='bx bx-trash'></i></button></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div id="user_modal" class="user_modal">
+                <ul>
+                    <li><?php echo $_SESSION['usuario']?></li>
+                    <a href="#"><li>Configuración</li></a>
+                    <a href="#"><li><a href="/mvc-hj/model/close.php">Cerrar Sesion</a></li></a>
+                </ul>
             </div>
         </div>
     </div>
 
-    <script src="/mvc-hj/view/template/menu.js"></script>
+    <script src="/mvc-hj/js/menu.js"></script>
+    <script src="/mvc-hj/js/user_modal.js"></script>
 </body>
 </html>

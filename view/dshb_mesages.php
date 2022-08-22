@@ -8,9 +8,7 @@ if(!isset($_SESSION['usuario'])){
     session_destroy();
     die();
 }
-
 $mensajes = "SELECT * FROM mensajes";
-
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +20,13 @@ $mensajes = "SELECT * FROM mensajes";
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="/mvc-hj/css/dshb_client.css">
     <link rel="stylesheet" href="/mvc-hj/css/responsive.css">
-    <title>Administración - Mensajes</title>
+    <title>Panel de Control (Mensajes) - Huevos Jireth</title>
 </head>
 <body>
     <!--SIDEBAR-->
     <div class="main">
-        <div class="sidebar">
-            <center><img src="/mvc-hj/img/logopollitofutbol.png" id="logo"></center>
+    <div class="sidebar">
+            <center><img src="/mvc-hj/img/Logo.png" id="logo"></center>
             <ul>
                 <li><a href="/mvc-hj/view/dshb_home.php">
                     <i class='bx bxs-home' title="Principal"></i>
@@ -47,7 +45,7 @@ $mensajes = "SELECT * FROM mensajes";
                     <span class="item">Productos</span>
                 </a></li>
                 <li><a href="/mvc-hj/view/dshb_mesages.php">
-                    <i class='bx bxs-card' title="Principal"></i>
+                    <i class='bx bxs-envelope' title="Mensajes"></i>
                     <span class="item">Mensajes</span>
                 </a></li>
             </ul>
@@ -55,23 +53,26 @@ $mensajes = "SELECT * FROM mensajes";
 
         <!--NAVBAR-->
         <div class="content">
-            <div class="navbar">
+        <div class="navbar">
                 <div class="n1">
                     <i class='bx bx-menu' id="btn-menu"></i>
-                    <h2>MENSAJES</h2>
+                    <h2>PRINCIPAL</h2>
                 </div>
-                <div class="profile">
-                <label for="perfil"><a href="/mvc-hj/model/close.php">Cerrar sesion</a></label>
-                    <p><?php echo $_SESSION['usuario']?></p>
-                    <img name="perfil" src="/mvc-hj/img/profile.png">
-                </div>
+                <img id="photo" src="/mvc-hj/img/profile.png">
+            </div>
+            <div id="user_modal" class="user_modal">
+                <ul>
+                    <li><?php echo $_SESSION['usuario']?></li>
+                    <a href="#"><li>Configuración</li></a>
+                    <a href="#"><li><a href="/mvc-hj/model/close.php">Cerrar Sesion</a></li></a>
+                </ul>
             </div>
 
             <div class="table">
                 <table>
                     <thead>
                         <tr>
-                            <td><h4>No. MENSAJE</h4></td>
+                            <td><h4>#</h4></td>
                             <td><h4>NOMBRE</h4></td>
                             <td><h4>CORREO</h4></td>
                             <td><h4>TELEFONO</h4></td>
@@ -100,7 +101,7 @@ $mensajes = "SELECT * FROM mensajes";
         </div>
     </div>
 
-    
-    <script src="/mvc-hj/view/template/menu.js"></script>
+    <script src="/mvc-hj/js/menu.js"></script>
+    <script src="/mvc-hj/js/user_modal.js"></script>
 </body>
 </html>

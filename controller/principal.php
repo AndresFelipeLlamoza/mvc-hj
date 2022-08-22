@@ -7,7 +7,7 @@ class principalController{
 	public $view;
 
 	public function __construct() {
-		$this->view = 'visitante';
+		$this->view = 'inicio';
 		$this->page_title = '';
 		$this->noteObj = new Principal();
 	}

@@ -114,7 +114,7 @@
     justify-content: center;
 }
 
-.profile img{
+.navbar img{
     width: 50px;
     object-fit: contain;
     object-position: center;
@@ -129,68 +129,28 @@
     cursor: pointer;
 }
 
-/*--------------------------------------------------RESERVS--------------------------------------------------*/
-.reserv{
-    margin: 30px;
-    padding: 10px;
-}
-
-.reserv table{
-    width: 60%;
-    border-radius: 6px;
-    border-collapse: collapse;
-    box-shadow: 0px 2px 2px 2px rgb(0 0 0 / 20%);
-}
-
-.reserv table thead{
-    background: wheat;
-    border-bottom: 1px solid black;
-}
-
-.reserv table td{
-    padding: 7px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.reserv table tbody td .edt{
-    background-color:green;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-    margin-right: 4px;
-}
-.reserv table tbody td .edt:hover{
-    cursor: pointer;
-    background-color:rgb(49, 216, 49);
-    color: black;
-    transform: scale(1.1);
-    transition: .1s ease;
-}
-.reserv table tbody td .edt:active{
-    transform: scale(.95);
-}
-
-.reserv table tbody td .del{
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 5px;
-}
-.reserv table tbody td .del:hover{
-    cursor: pointer;
-    background-color: rgb(255, 102, 102);
-    color: black;
-    transform: scale(1.1);
-    transition: .1s ease;
-}
-.reserv table tbody td .del:active{
-    transform: scale(.95);
-}
-
-.reserv tbody td #edt, #del{
+.user_modal{
+    float: right;
+    margin-right: 1rem;
+    z-index: 1;
+    position: sticky;
+    background-color: rgb(221, 221, 221);
+    border-radius: 2px;
+    box-shadow: 0px 0px 7px rgb(0,0,0,50%);
     display: none;
+}
+.user_modal ul{
+    padding: 5px;
+}
+.user_modal ul li{
+    color: black;
+    text-align: center;
+    padding: 5px;
+    font-size: small;
+}
+.user_modal ul li:hover{
+    background-color: #ff9710;
+}
+.modal_show{
+    display: block;
 }

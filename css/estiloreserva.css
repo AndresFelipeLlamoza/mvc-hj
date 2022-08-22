@@ -1,0 +1,77 @@
+.oprsvbx{
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: rgb(255, 190, 68);
+    font-size: 20px;
+    border: none;
+}
+.oprsvbx:hover{
+    border: 1px solid black;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+    transition: all .1s ease;
+}
+
+.boxrsv{
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 100;
+}
+.rsvform{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    color: white;
+    width: 350px;
+    padding: 2%;
+    background-color: rgb(25, 109, 148);
+    border-radius: 15px;
+}
+.rsvform h4{
+    text-align: center;
+}
+.rsvform #user_reserv{
+    border: none;
+    outline: none;
+    background: none;
+    text-align: center;
+}
+.rsvform #precio{
+    outline: none;
+}
+.showrsvbx{
+    display: block;
+}
+.rsvform .reservation{
+    border: none;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 6px;
+    width: 80px;
+    height: 40px;
+}
+.rsvform .reservation:hover{
+    border: 3px solid forestgreen;
+    background-color: white;
+    color: black;
+}
+.rsvform .cancelrsv{
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 6px;
+    width: 80px;
+    height: 40px;
+}
+.rsvform .cancelrsv:hover{
+    border: 3px solid red;
+    background-color: white;
+    color: black;
+}

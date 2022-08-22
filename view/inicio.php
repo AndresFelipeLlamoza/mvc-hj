@@ -119,16 +119,52 @@ $I = array(
     } mysqli_free_result($show);
 
     ?>
-
- 
 </section>
 
-<!--Reserva-->
+<!--Reservas-->
+<sectionc class="boxreserva">
+    <center><button class="oprsvbx" id="oprsvbx">Reservar</button></center>
+
+    <div class="boxrsv" id="boxrsv">
+        <div class="rsvform" id="rsvform">
+        <form action="" method="post">
+            <h4>HAZ TU RESERVA YA!!</h4>
+            <center><input type="hidden" id="user_reserv" value="<?php echo $_SESSION['usuario']?>" readonly></center>
+            <label>Escoje tu producto</label>
+            <br>
+            <select>
+                <option>--Seleccione--</option>
+                <?php $showp = mysqli_query($conx,$productos);
+                while($rowp=mysqli_fetch_assoc($showp)) { ?>
+                <option><?php echo $rowp["Nombre"]?></option>
+                <?php } mysqli_free_result($showp)?>
+            </select>
+            <br>
+            <label>Precio</label>
+            <br>
+            <input id="precio" type="text" style="width:100px" readonly>
+            <br>
+            <label>Cantidad</label>
+            <br>
+            <input type="number" name="cantidad" min="1" max="5" pattern="^[0-9]+">
+            <br>
+            <label>Valor total</label>
+            <span><h3>$ 15.000</h3></span>
+            <br>
+            <center>
+                <button class="reservation">Reservar</button>
+                <button class="cancelrsv" id="cancelrsv">Cancelar</button>
+            </center>
+        </form>
+        </div>
+    </div>
+</section>
+
 
 <!--recetas-->
 <section id="recetas">
 <div class="nreceta"><br>
-    <h1>RECETAS QUE TE PODRIAN INTERESAR </h1><br>
+    <h1>RECETAS QUE TE PODRIA INTERESAR </h1><br>
 </div>
 
 <div class="recetas">
@@ -209,5 +245,7 @@ $I = array(
     })()
     
     </script>
+
+    <script src="/mvc-hj/js/rsvbx.js"></script>
 </body>
 </html>
