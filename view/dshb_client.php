@@ -45,6 +45,10 @@ include ("../model/conexion.php");
                     <i class='bx bxs-envelope' title="Mensajes"></i>
                     <span class="item">Mensajes</span>
                 </a></li>
+                <li><a href="/mvc-hj/model/reporte.php">
+                    <i class='bx bxs-file-doc'></i>
+                    <span class="item">Reporte</span>
+                </a></li>
             </ul>
         </div>
 
