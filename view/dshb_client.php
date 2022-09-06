@@ -21,6 +21,8 @@ include ("../model/conexion.php");
 </head>
 <body>
     <!--SIDEBAR-->
+    <div class="wrapper">
+    <div class="content-wrapper">
     <div class="main">
         <div class="sidebar">
             <center><img src="/mvc-hj/img/Logo.png" id="logo"></center>
@@ -45,10 +47,7 @@ include ("../model/conexion.php");
                     <i class='bx bxs-envelope' title="Mensajes"></i>
                     <span class="item">Mensajes</span>
                 </a></li>
-                <li><a href="/mvc-hj/model/reporte.php">
-                    <i class='bx bxs-file-doc'></i>
-                    <span class="item">Reporte</span>
-                </a></li>
+                
             </ul>
         </div>
 
@@ -77,7 +76,6 @@ include ("../model/conexion.php");
                             <td><h4>ID</h4></td>
                             <td><h4>NOMBRE</h4></td>
                             <td><h4>CORREO</h4></td>
-                            <td><h4>ACCIONES</h4></td>
                         </tr>
                     </thead>
                     <?php foreach ($conx->query("SELECT * from usuarios WHERE idRol !='1'") as $row){?>
@@ -85,18 +83,17 @@ include ("../model/conexion.php");
                             <td><?php echo $row ["idUsuario"];?></td>
                             <td><?php echo $row ["Nombre"];?></td>
                             <td><?php echo $row ["Correo"];?></td>
-                            <td>
-                                <a href="/mvc-hj/view/template/actualizacion.php?id=<?php echo $row ["idUsuario"]?>"><button class="edit"><i class='bx bxs-pencil'></i>Editar</button></a>
-                                <a href="/mvc-hj/model/delete.php?id=<?php echo $row ["idUsuario"];?>"><button class="delete"><i class='bx bx-trash'></i>Eliminar</button></a>
-
-                                <a href="#"><button id="edit"><i class='bx bxs-pencil'></i></button></a>
-                                <a href="/mvc-hj/model/deleteproduct.php?id=<?php echo $row ["idUsuario"];?>"><button id="delete"><i class='bx bx-trash'></i></button></a>
-                            </td>
+                            
                         </tr>
                         
                         <?php } ?>
                         
                 </table>
+            </div>
+            <div class="reserva-cliente">
+                <a href="/mvc-hj/model/reporte.php" target="_blank"><button class="report"><i class='bx bxs-report'></i>Reporte</button></a>
+                <a href="/mvc-hj/model/descargareport.php"><button class="download"><i class='bx bxs-download'></i>Descagar reporte</button></a>
+            </div>
             </div>
             </form>
         </div>
@@ -104,5 +101,7 @@ include ("../model/conexion.php");
 
     <script src="/mvc-hj/js/menu.js"></script>
     <script src="/mvc-hj/js/user_modal.js"></script>
+    </div>
+</div>
 </body>
 </html>

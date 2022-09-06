@@ -26,7 +26,6 @@ function Header()
 function Footer()
 {
     // Posición: a 1,5 cm del final
-    $this->SetFillColor(255,140,0);
     $this->SetY(-15);
     // Arial italic 8
     $this->SetFont('Arial','I',8);
@@ -50,6 +49,5 @@ foreach ($conx -> query($consulta) as $row){
     $pdf->Cell(50, 10, $row['idRol'], 1, 1, 'C', 0);
 }
 
-$pdf->Output();
+$pdf->Output("Clientes.pdf", 'D');
 ?>
-
