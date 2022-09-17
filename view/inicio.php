@@ -127,38 +127,40 @@ $I = array(
 
     <div class="boxrsv" id="boxrsv">
         <div class="rsvform" id="rsvform">
-        <form action="" method="post">
+        <form action="/mvc-hj/model/reservation.php" method="post">
             <h4>HAZ TU RESERVA YA!!</h4>
-            <center><input type="hidden" id="user_reserv" value="<?php echo $_SESSION['usuario']?>" readonly></center>
+            <center><input type="hidden" id="user_reserv" value="<?php echo $_SESSION['usuario']?>" readonly name="username"></center>
             <label>Escoje tu producto</label>
             <br>
-            <select>
-                <option>--Seleccione--</option>
-                <?php $showp = mysqli_query($conx,$productos);
-                while($rowp=mysqli_fetch_assoc($showp)) { ?>
-                <option><?php echo $rowp["Nombre"]?></option>
-                <?php } mysqli_free_result($showp)?>
+            <select id="listproductos" name="product">
+                <option selected>Seleccione</option>
             </select>
             <br>
             <label>Precio</label>
             <br>
-            <input id="precio" type="text" style="width:100px" readonly>
+            <select id="listprecios" onselect="calcular()" name="price">
+                <option></option>
+            </select>
             <br>
             <label>Cantidad</label>
             <br>
-            <input type="number" name="cantidad" min="1" max="5" pattern="^[0-9]+">
+            <input id="cantidad" type="number" name="amount" min="1" max="5" pattern="^[0-9]" oninput="calcular()">
             <br>
             <label>Valor total</label>
-            <span><h3>$ 15.000</h3></span>
+            <br>
+            <h3><p>$<span id="total"></span></p></h3>
             <br>
             <center>
-                <button class="reservation">Reservar</button>
+                <button type="submit" class="reservation">Reservar</button>
                 <button class="cancelrsv" id="cancelrsv">Cancelar</button>
             </center>
         </form>
         </div>
     </div>
 </section>
+<!--
+    Vigente - Retirado - Cancelado
+-->
 
 
 <!--recetas-->
@@ -247,5 +249,6 @@ $I = array(
     </script>
 
     <script src="/mvc-hj/js/rsvbx.js"></script>
+    <script src="/mvc-hj/js/select.js"></script>
 </body>
 </html>

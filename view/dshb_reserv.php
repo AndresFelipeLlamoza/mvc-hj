@@ -7,6 +7,7 @@ if(!isset($_SESSION['usuario'])){
     die();
 }
 include ("../model/conexion.php");
+$reservs="SELECT * FROM reservas";
 ?>
 
 <!DOCTYPE html>
@@ -65,6 +66,40 @@ include ("../model/conexion.php");
                     <a href="#"><li>Configuración</li></a>
                     <a href="#"><li><a href="/mvc-hj/model/close.php">Cerrar Sesion</a></li></a>
                 </ul>
+            </div>
+
+            <div class="table-reserv">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php $show=mysqli_query($conx,$reservs);
+                    while($row=mysqli_fetch_assoc($show)){?>
+                        <tr>
+                            <td><?php echo $row["idReserva"]?></td>
+                            <td><?php echo $row["Usuario"]?></td>
+                            <td><?php echo $row["Producto"]?></td>
+                            <td><?php echo $row["Precio"]?></td>
+                            <td><?php echo $row["Cantidad"]?></td>
+                            <td>$ <?php echo $row["Total"]?></td>
+                            <td><?php echo $row["Fecha"]?></td>
+                            <td><?php echo $row["Hora"]?></td>
+                            <td><?php echo $row["Estado"]?></td>
+                        </tr>
+                    <?php } mysqli_free_result($show)?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

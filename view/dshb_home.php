@@ -9,6 +9,14 @@ if(!isset($_SESSION['usuario'])){
 $totalusers="SELECT COUNT(*) total FROM usuarios WHERE idRol !='1'";
 $result=mysqli_query($conx,$totalusers);
 $row=mysqli_fetch_assoc($result);
+
+$ingresos="SELECT SUM(Total) suma FROM reservas WHERE Estado='Retirado'";
+$query=mysqli_query($conx,$ingresos);
+$column=mysqli_fetch_assoc($query);
+
+$reservas="SELECT COUNT(*) vigentes FROM reservas WHERE Estado='Vigente'";
+$consulta=mysqli_query($conx,$reservas);
+$estado=mysqli_fetch_assoc($consulta);
 ?>
 
 <!DOCTYPE html>
@@ -82,14 +90,14 @@ $row=mysqli_fetch_assoc($result);
                     <i class='bx bxs-bookmark-minus'></i>
                     <div>
                         <h5>Reservas</h5>
-                        <span>8</span>
+                        <span><?php echo $estado['vigentes']?></span>
                     </div>
                 </div>
                 <div class="inf">
                     <i class='bx bx-dollar'></i>
                     <div>
                         <h5>Ingresos</h5>
-                        <span>$136.000</span>
+                        <span>$<?php echo $column['suma']?></P></span>
                     </div>
                 </div>
             </div>
