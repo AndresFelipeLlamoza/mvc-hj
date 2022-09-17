@@ -6,8 +6,9 @@ $correo=$_POST["email"];
 $contraseña=$_POST["password"];
 $contraseña=hash('sha512',$contraseña);
 
-$create="INSERT INTO usuarios (Nombre, Correo, Contraseña)
-        VALUES ('$nombre','$correo','$contraseña')";
+
+$create="INSERT INTO usuarios (Nombre, Correo, Contraseña, FechaRegistro)
+        VALUES ('$nombre','$correo','$contraseña', now())";
 
 $result=mysqli_query($conx,$create);
 
