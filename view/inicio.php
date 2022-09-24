@@ -152,16 +152,12 @@ $I = array(
             <br>
             <center>
                 <button type="submit" class="reservation">Reservar</button>
-                <button class="cancelrsv" id="cancelrsv">Cancelar</button>
+                <button type="button" class="cancelrsv" id="cancelrsv">Cancelar</button>
             </center>
         </form>
         </div>
     </div>
 </section>
-<!--
-    Vigente - Retirado - Cancelado
--->
-
 
 <!--recetas-->
 <section id="recetas">

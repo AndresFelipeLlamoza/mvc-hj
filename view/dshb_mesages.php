@@ -26,7 +26,7 @@ $mensajes = "SELECT * FROM mensajes";
     <!--SIDEBAR-->
     <div class="main">
     <div class="sidebar">
-            <center><img src="/mvc-hj/img/Logo.png" id="logo"></center>
+            <center><a href="/mvc-hj/view/dshb_home.php"><img src="/mvc-hj/img/Logo.png" id="logo"></a></center>
             <ul>
                 <li><a href="/mvc-hj/view/dshb_home.php">
                     <i class='bx bxs-home' title="Principal"></i>
@@ -77,7 +77,6 @@ $mensajes = "SELECT * FROM mensajes";
                             <td><h4>NOMBRE</h4></td>
                             <td><h4>CORREO</h4></td>
                             <td><h4>TELEFONO</h4></td>
-                            <td><h4>TIPO</h4></td>
                             <td><h4>DESCRIPCION</h4></td>
                             <td><h4>ACCION</h4></td>
                         </tr>
@@ -88,7 +87,6 @@ $mensajes = "SELECT * FROM mensajes";
                             <td><?php echo $row ["Nombre"];?></td>
                             <td><?php echo $row ["Correo"];?></td>
                             <td><?php echo $row ["Telefono"];?></td>
-                            <td><?php echo $row ["Tipo"];?></td>
                             <td><?php echo $row ["Mensaje"];?></td>
                             <td class="ab">
                                 <a href="/mvc-hj/model/deletepqrs.php?id=<?php echo $row ["idMensaje"];?>"><button class="delete"><i class='bx bx-trash'></i>Eliminar</button></a>

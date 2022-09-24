@@ -29,7 +29,7 @@ $admin = "SELECT Nombre FROM usuarios WHERE id_Usuario = '15428'"
     <!--SIDEBAR-->
     <div class="main">
     <div class="sidebar">
-            <center><img src="/mvc-hj/img/Logo.png" id="logo"></center>
+            <center><a href="/mvc-hj/view/dshb_home.php"><img src="/mvc-hj/img/Logo.png" id="logo"></a></center>
             <ul>
                 <li><a href="/mvc-hj/view/dshb_home.php">
                     <i class='bx bxs-home' title="Principal"></i>
@@ -90,16 +90,10 @@ $admin = "SELECT Nombre FROM usuarios WHERE id_Usuario = '15428'"
                             <td><?php echo $row ["Precio"];?></td>
                             <td><?php echo $row ["Descripcion"];?></td>
                             <td class="ab">
-                                <a href="/mvc-hj/view/template/actualizacionproduct.php?id=<?php echo $row ["idProducto"]?>"><button class="edit"><i class='bx bxs-pencil'></i>Editar</button></a>
-                                <a href="/mvc-hj/model/deleteproduct.php?id=<?php echo $row ["idProducto"];?>"><button class="delete"><i class='bx bx-trash'></i>Eliminar</button></a>
-
-                                <a href="#"><button id="edit"><i class='bx bxs-pencil'></i></button></a>
-                                <a href="/mvc-hj/model/deleteproduct.php?id=<?php echo $row ["idProducto"];?>"><button id="delete"><i class='bx bx-trash'></i></button></a>
-                            </td>
+                                <a href="/mvc-hj/view/template/actualizacionproduct.php?id=<?php echo $row ["idProducto"]?>"><button class="edit"><i class='bx bxs-pencil'></i></button></a>
+                                <a href="/mvc-hj/model/deleteproduct.php?id=<?php echo $row ["idProducto"];?>"><button class="delete"><i class='bx bx-trash'></i></button></a>
                         </tr>
-                        
                         <?php } ?>
-                        
                 </table>
             </div>
         </div>

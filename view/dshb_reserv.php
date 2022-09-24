@@ -25,7 +25,7 @@ $reservs="SELECT * FROM reservas";
     <!--SIDEBAR-->
     <div class="main">
         <div class="sidebar">
-            <center><img src="/mvc-hj/img/Logo.png" id="logo"></center>
+            <center><a href="/mvc-hj/view/dshb_home.php"><img src="/mvc-hj/img/Logo.png" id="logo"></a></center>
             <ul>
                 <li><a href="/mvc-hj/view/dshb_home.php">
                     <i class='bx bxs-home' title="Principal"></i>

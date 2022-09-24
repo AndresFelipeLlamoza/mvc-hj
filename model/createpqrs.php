@@ -4,10 +4,9 @@ include ("conexion.php");
 $nombre = $_POST["nombre"];
 $correo = $_POST["correo"];
 $telefono = $_POST["telefono"];
-$tipo = $_POST ["tipo"];
 $mensaje = $_POST["mensaje"];
 
-$pqrs = "INSERT INTO mensajes (Nombre, Correo, Telefono, Tipo, Mensaje) VALUES ('$nombre', '$correo', '$telefono', '$tipo','$mensaje')";
+$pqrs = "INSERT INTO mensajes (Nombre, Correo, Telefono, Mensaje) VALUES ('$nombre', '$correo', '$telefono','$mensaje')";
 $result = mysqli_query($conx, $pqrs);
 
 if(isset($result)){

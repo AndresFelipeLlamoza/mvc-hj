@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2022 a las 17:40:25
+-- Tiempo de generación: 24-09-2022 a las 17:45:58
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.11
 
@@ -21,6 +21,20 @@ SET time_zone = "+00:00";
 -- Base de datos: `huevosjireth`
 --
 
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DATOSGRAFICO_BAR` ()  SELECT Producto, SUM(Total) FROM reservas WHERE Producto = 'Huevos Pequeños' AND Estado='Retirado'
+UNION
+SELECT Producto, SUM(Total) FROM reservas WHERE Producto = 'Huevos Medianos' AND Estado='Retirado'
+UNION
+SELECT Producto, SUM(Total) FROM reservas WHERE Producto = 'Huevos Triple A' AND Estado='Retirado'
+UNION
+SELECT Producto, SUM(Total) FROM reservas WHERE Producto = 'Huevos Doble Yema' AND Estado='Retirado'$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -32,7 +46,6 @@ CREATE TABLE `mensajes` (
   `Nombre` varchar(50) NOT NULL,
   `Correo` varchar(30) NOT NULL,
   `Telefono` int(10) NOT NULL,
-  `Tipo` varchar(15) NOT NULL,
   `Mensaje` varchar(500) NOT NULL,
   `idUsuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -41,10 +54,10 @@ CREATE TABLE `mensajes` (
 -- Volcado de datos para la tabla `mensajes`
 --
 
-INSERT INTO `mensajes` (`idMensaje`, `Nombre`, `Correo`, `Telefono`, `Tipo`, `Mensaje`, `idUsuario`) VALUES
-(6, 'Laura sofia hernandez', 'Laush23@gmail.com', 2147483647, 'Queja', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sunt illum repellat laborum repellendus quas quisquam eligendi, ipsam quae eaque aspernatur corporis minus nam odio? Totam voluptatem eveniet possimus praesentium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam commodi doloribus? Temporibus quia perferendis similique magnam ab cupiditate officia provident et. Laudantium deserunt eos laborum reiciendis asperiores sed veniam?', 0),
-(8, 'joao almeida', 'joa@gmail.com', 312548754, 'Queja', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sunt illum repellat laborum repellendus quas quisquam eligendi, ipsam quae eaque aspernatur corporis minus nam odio? Totam voluptatem eveniet possimus praesentium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam commodi doloribus? Temporibus quia perferendis similique magnam ab cupiditate officia provident et. Laudantium deserunt eos laborum reiciendis asperiores sed veniam?', 0),
-(9, 'jhoan', 'jhoan123@gmail.com', 123456, 'Sugerencia', 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sunt illum repellat laborum repellendus quas quisquam eligendi, ipsam quae eaque aspernatur corporis minus nam odio? Totam voluptatem eveniet possimus praesentium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam commodi doloribus? Temporibus quia perferendis similique magnam ab cupiditate officia provident et. Laudantium deserunt eos laborum reiciendis asperiores sed veniam?', 0);
+INSERT INTO `mensajes` (`idMensaje`, `Nombre`, `Correo`, `Telefono`, `Mensaje`, `idUsuario`) VALUES
+(6, 'Laura sofia hernandez', 'Laush23@gmail.com', 2147483647, 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sunt illum repellat laborum repellendus quas quisquam eligendi, ipsam quae eaque aspernatur corporis minus nam odio? Totam voluptatem eveniet possimus praesentium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam commodi doloribus? Temporibus quia perferendis similique magnam ab cupiditate officia provident et. Laudantium deserunt eos laborum reiciendis asperiores sed veniam?', 0),
+(8, 'joao almeida', 'joa@gmail.com', 312548754, 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sunt illum repellat laborum repellendus quas quisquam eligendi, ipsam quae eaque aspernatur corporis minus nam odio? Totam voluptatem eveniet possimus praesentium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam commodi doloribus? Temporibus quia perferendis similique magnam ab cupiditate officia provident et. Laudantium deserunt eos laborum reiciendis asperiores sed veniam?', 0),
+(9, 'jhoan', 'jhoan123@gmail.com', 123456, 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum sunt illum repellat laborum repellendus quas quisquam eligendi, ipsam quae eaque aspernatur corporis minus nam odio? Totam voluptatem eveniet possimus praesentium? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa veniam commodi doloribus? Temporibus quia perferendis similique magnam ab cupiditate officia provident et. Laudantium deserunt eos laborum reiciendis asperiores sed veniam?', 0);
 
 -- --------------------------------------------------------
 
@@ -94,13 +107,17 @@ CREATE TABLE `reservas` (
 INSERT INTO `reservas` (`idReserva`, `Usuario`, `Producto`, `Precio`, `Cantidad`, `Fecha`, `Hora`, `Estado`) VALUES
 (1, 'felipe ramos ', 'Huevos Triple A', 18500, 4, '2022-09-17', '09:34:00', 'Vigente'),
 (2, 'felipe ramos ', 'Huevos Doble Yema', 22000, 4, '2022-09-17', '09:35:25', 'Retirado'),
-(3, 'felipe ramos ', 'Huevos Pequeños', 10500, 1, '2022-09-17', '09:38:59', 'Vigente'),
+(3, 'felipe ramos ', 'Huevos Pequeños', 10500, 1, '2022-09-17', '09:38:59', 'Retirado'),
 (4, 'felipe ramos ', 'Huevos Triple A', 18500, 2, '2022-09-17', '09:45:41', 'Cancelado'),
-(5, 'felipe ramos ', 'Huevos Medianos', 15400, 5, '2022-09-17', '09:50:27', 'Cancelado'),
+(5, 'felipe ramos ', 'Huevos Medianos', 15400, 5, '2022-09-17', '09:50:27', 'Retirado'),
 (6, 'felipe ramos ', 'Huevos Doble Yema', 22000, 4, '2022-09-17', '09:50:49', 'Vigente'),
 (7, 'felipe ramos ', 'Huevos Triple A', 18500, 4, '2022-09-17', '09:52:56', 'Retirado'),
 (8, 'felipe ramos ', 'Huevos Doble Yema', 22000, 4, '2022-09-17', '09:54:36', 'Retirado'),
-(9, 'yeison', 'Huevos Doble Yema', 22000, 1, '2022-09-17', '10:18:25', 'Vigente');
+(9, 'yeison', 'Huevos Doble Yema', 22000, 1, '2022-09-17', '10:18:25', 'Vigente'),
+(11, 'felipe ramos ', 'Huevos Pequeños', 10500, 2, '2022-09-24', '07:30:07', 'Retirado'),
+(12, 'felipe ramos ', 'Huevos Pequeños', 10500, 5, '2022-09-24', '07:30:16', 'Retirado'),
+(13, 'felipe ramos', 'Huevos Doble Yema', 22000, 2, '2022-09-24', '10:32:18', 'Vigente'),
+(14, 'felipe ramos', 'Huevos Triple A', 18500, 3, '2022-09-24', '10:33:07', 'Vigente');
 
 -- --------------------------------------------------------
 
@@ -191,13 +208,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `mensajes`
 --
 ALTER TABLE `mensajes`
-  MODIFY `idMensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idMensaje` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`

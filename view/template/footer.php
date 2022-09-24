@@ -37,7 +37,7 @@ footer{
             </div>
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1);">
               El Señor mi proveedor &copy;Huevos Jireth 2022:
-              <a class="text-light" href="#">HuevosJireth.com</a>
+              <a class="text-light" href="/mvc-hj">HuevosJireth.com</a>
             </div>
           </footer>
     </section>

@@ -16,7 +16,7 @@
 </label>
 <!--Imagen del navbar-->
 <a href="#" class="logo">
-	<img src="../mvc-hj/img/LogoPollitoFutbol.png" alt="" class="Logonav">
+	<img src="../mvc-hj/img/Logo.png" alt="" class="Logonav">
 </a>
 <!--Enlaces del navbar-->
 	<ul>

@@ -26,7 +26,7 @@
 </label>
 <!--Imagen del navbar-->
 <a href="/mvc-hj/index.php" class="logo">
-	<img src="/mvc-hj/img/LogoPollitoFutbol.png" alt="" class="Logonav">
+	<img src="/mvc-hj/img/Logo.png" alt="" class="Logonav">
 </a>
 <!--Enlaces del navbar-->
 </nav>
@@ -43,7 +43,7 @@
         </div>
             <!--Usuario/Contraseña-->
             <h1>Inicia Sesion</h1>
-            <input type="text" placeholder="Usuario"  minlength="1" maxlength="50" name="user"> 
+            <input type="text" placeholder="Usuario"  minlength="1" maxlength="50" name="user" onkeypress="return sololetras(event);"> 
             <input type="password" placeholder="Contraseña"  name="password" >
             <input type="submit" class="botonlogin" value="Acceder">
             <a class="olvidaste" href="correo.html">¿Olvidaste tu contraseña?</a>
