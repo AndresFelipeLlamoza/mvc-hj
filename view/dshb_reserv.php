@@ -17,7 +17,7 @@ $reservs="SELECT * FROM reservas";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="stylesheet" href="/mvc-hj/css/dshb_reserv.css">
+    <link rel="stylesheet" href="/mvc-hj/css/dshb_client.css">
     <link rel="stylesheet" href="/mvc-hj/css/responsive.css">
     <title>Panel de Control (Reservas) - Huevos Jireth</title>
 </head>
@@ -68,19 +68,19 @@ $reservs="SELECT * FROM reservas";
                 </ul>
             </div>
 
-            <div class="table-reserv">
+            <div class="table">
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Cliente</th>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Total</th>
-                            <th>Fecha</th>
-                            <th>Hora</th>
-                            <th>Estado</th>
+                            <td>ID</th>
+                            <td>Cliente</th>
+                            <td>Producto</th>
+                            <td>Precio</th>
+                            <td>Cantidad</th>
+                            <td>Total</th>
+                            <td>Fecha</th>
+                            <td>Hora</th>
+                            <td>Estado</th>
                         </tr>
                     </thead>
                     <tbody>
