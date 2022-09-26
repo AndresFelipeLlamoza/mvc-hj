@@ -6,7 +6,7 @@ $product = $_POST["product"];
 $price = $_POST["price"];
 $cant = $_POST["amount"];
 $date = date("d/m/y");
-$time = time("h:m");
+$time = time();
 
 $reserv="INSERT INTO reservas (Usuario,Producto,Precio,Cantidad,Fecha,Hora) VALUES ('$user','$product','$price','$cant',now(),now())";
 $result=mysqli_query($conx,$reserv);

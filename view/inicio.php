@@ -1,5 +1,4 @@
 <?php
-session_start();
 if(!isset($_SESSION['usuario'])){
     echo "<script>alert('Debes iniciar sesion');location='/mvc-hj/view/template/login.php';</script>";
     session_destroy();
