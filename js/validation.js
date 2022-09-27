@@ -3,6 +3,8 @@ function validar(e){
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var pass = document.getElementById("password").value;
+    var tel = document.getElementById("tel").value;
+    var text = document.getElementById("text").value;
     var expresion;
 
     expresion = /\w+@\w+\.+[a-z]/;
@@ -18,6 +20,14 @@ function validar(e){
     }
     else if(pass===""){
         alert("El campo CONTRASEÑA esta vacio");
+        return false;
+    }
+    else if(tel===""){
+        alert("El campo TELEFONO esta vacio");
+        return false;
+    }
+    else if(text===""){
+        alert("El campo MENSAJE esta vacio");
         return false;
     }
 

@@ -12,7 +12,7 @@ $create="INSERT INTO usuarios (Nombre, Correo, Contraseña)
 $result=mysqli_query($conx,$create);
 
 if($result){
-    echo "<script>alert('Registro guardado');window.location='/mvc-hj/view/template/login.php';</script>";
+    echo "<script>alert('Registro guardado');window.location='/mvc-hj/view/template/pqrs.php';</script>";
 }else{
     echo "<script>alert('No se realizo el registro');window.history.go(-1)</script>";
 }

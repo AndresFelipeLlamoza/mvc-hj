@@ -19,26 +19,26 @@ include ("header-detalle.php");
 </head>
 <body>
     <div class="pq" >
-        <form action="/mvc-hj/model/createpqrs.php" method="post">
+        <form action="/mvc-hj/model/createpqrs.php" method="post" onsubmit="return validar(event);">
         <div class="text">
             <h2>Formulario PQRS</h2>
             <p>Si tienes una pregunta, queja o reclamo, puedes enviar tu inquietud en este formulario y te responderemos por medio de correo electrónico o teléfono.</p>
         </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name" onkeypress="return sololetras(event);">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="nombre" onkeypress="return sololetras(event);">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Correo</label>
+                <label class="form-label">Correo</label>
                 <input type="email" class="form-control" id="email" name="correo">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Telefono</label>
-                <input type="text" class="form-control" id="tel" name="telefono" onkeypress="return solonumeros(event);">
+                <label class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="tel" name="telphone" onkeypress="return solonumeros(event);">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Mensaje</label>
-                <input type="text" class="form-control" id="exampleInputPassword1" name="mensaje">
+                <label class="form-label">Mensaje</label>
+                <input type="text" class="form-control" id="text" name="mensaje">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
@@ -47,6 +47,5 @@ include ("header-detalle.php");
 <?php    
 include ("footer.php");
 ?>
-
 </body>
 </html>
