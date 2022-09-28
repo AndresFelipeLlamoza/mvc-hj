@@ -90,10 +90,7 @@ include ("../model/conexion.php");
                         
                 </table>
             </div>
-            <div class="reserva-cliente">
-                <a href="/mvc-hj/model/reporte.php" target="_blank"><button class="report"><i class='bx bxs-report'></i>Reporte</button></a>
-                <a href="/mvc-hj/model/descargareport.php"><button class="download"><i class='bx bxs-download'></i>Descagar reporte</button></a>
-            </div>
+           
             </div>
             </form>
         </div>

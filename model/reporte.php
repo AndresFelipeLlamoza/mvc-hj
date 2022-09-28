@@ -13,12 +13,15 @@ function Header()
     // Movernos a la derecha
     $this->Cell(65);
     // Título
-    $this->Cell(70,10,'Reporte de usuarios',0,0,'C');
+    $this->Cell(70,10,'Reporte de las reservas',0,0,'C');
     // Salto de línea
     $this->Ln(30);
-    $this->Cell(65, 10, 'Nombre', 1, 0, 'C', 0);
-    $this->Cell(75, 10, 'Correo', 1, 0, 'C', 0);
-    $this->Cell(50, 10, 'idRol', 1, 1, 'C', 0);
+    $this->Cell(65, 10, 'Producto', 1, 0, 'C', 0);
+    $this->Cell(20, 10, 'Precio', 1, 0, 'C', 0);
+    $this->Cell(25, 10, 'Cantidad', 1, 0, 'C', 0);
+    $this->Cell(20, 10, 'Total', 1, 0, 'C', 0);
+    $this->Cell(30, 10, 'Fecha', 1, 0, 'C', 0);
+    $this->Cell(30, 10, 'Estado', 1, 1, 'C', 0);
     
 }
 
@@ -35,7 +38,7 @@ function Footer()
 }
 }
 include ('conexion.php');
-$consulta = "SELECT * FROM usuarios";
+$consulta = "SELECT * FROM reservas WHERE Estado !='Vigente'";
 $resultado = mysqli_query($conx, $consulta);
 
 $pdf = new PDF();
@@ -45,11 +48,14 @@ $pdf->SetFont('Arial','',16);
 
 foreach ($conx -> query($consulta) as $row){
     
-    $pdf->Cell(65, 10, $row['Nombre'], 1, 0, 'C', 0);
-    $pdf->Cell(75, 10, $row['Correo'], 1, 0, 'C', 0);
-    $pdf->Cell(50, 10, $row['idRol'], 1, 1, 'C', 0);
+
+    $pdf->Cell(65, 10, $row['Producto'], 1, 0, 'C', 0);
+    $pdf->Cell(20, 10, $row['Precio'], 1, 0, 'C', 0);
+    $pdf->Cell(25, 10, $row['Cantidad'], 1, 0, 'C', 0);
+    $pdf->Cell(20, 10, $row['Total'], 1, 0, 'C', 0);
+    $pdf->Cell(30, 10, $row['Fecha'], 1, 0, 'C', 0);
+    $pdf->Cell(30, 10, $row['Estado'], 1, 1, 'C', 0);
 }
 
 $pdf->Output();
 ?>
-

@@ -100,6 +100,10 @@ $reservs="SELECT * FROM reservas";
                     <?php } mysqli_free_result($show)?>
                     </tbody>
                 </table>
+                <br>
+                <div class="BotonesReport">
+                    <a href='/mvc-hj/model/reporte.php' target="_blank"><button class="report"><i class='bx bxs-report'></i>Generar reporte</button></a>
+                </div>
             </div>
         </div>
     </div>
@@ -108,3 +112,5 @@ $reservs="SELECT * FROM reservas";
     <script src="/mvc-hj/js/user_modal.js"></script>
 </body>
 </html>
+
+
